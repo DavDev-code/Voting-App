@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+
+<style>
+    body{
+        font-family: "Rubik Glitch", serif;
+        font-size: xx-large;
+        background-color: #de5404;
+    }
+    h1{
+        font-weight: normal;
+    }
+    div{
+        border-radius: 25px;
+        text-align: center;
+        background-color: white;
+        border: 10px solid purple;
+        width: 60%;
+        margin-left: 20%;
+        margin-top: 2%;
+        padding-bottom: 3%;
+    }
+    input[type=radio]{
+        transform: scale(1.5);
+    }
+    button[type=submit]{
+        font-family: "Rubik Glitch", serif;
+        font-size: xx-large;
+        background-color: #10108f;
+        color: #0da312;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 3%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+    li{
+        list-style: none;
+    }
+</style>
+
+<head>
+    <title>Voting Results</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&display=swap">
+</head>
+<body>
+    <div>
+        <h1>Voting Results</h1>
+        <ul>
+            {% for genre, votes in results %}
+                <li>{{ genre }}: {{ votes }} vote{{ 's' if votes != 1 else '' }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <!--<a href="{{ url_for('index') }}">Back to vote</a>-->
+</body>
+</html>
